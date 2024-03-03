@@ -1,0 +1,83 @@
+<form class="row g-3" (submit)="SendValues($event)">
+    <div class="col-md-4">
+        <label for="validationServer01" class="form-label"> name</label>
+        <input [(ngModel)]="name" type="text" id="validationServer01" name="name"
+         required class="form-control"
+         [ngClass]='{
+            "is-valid":NameValidation,
+            "is-invalid":!NameValidation && NameTouched
+         }'
+         
+         >
+        <div class="valid-feedback">
+            Looks good!
+        </div>
+        <div class="invalid-feedback">Name Must be more than 4 letter !</div>
+    </div>
+    <div class="col-md-4">
+        <label for="validationServer01" class="form-label">Age</label>
+        <input [(ngModel)]="age" type="number" id="validationServer2" name="age"
+         required class="form-control"
+         [ngClass]='{
+            "is-valid":AgeValidation,
+            "is-invalid":!AgeValidation && AgeTouched
+         }'
+         
+         >
+        <div class="valid-feedback">
+            Looks good!
+        </div>
+        <div class="invalid-feedback">Name Must be more than 10 and less than 18 !</div>
+    </div>
+
+
+    <div class="col-md-4">
+        <label for="validationServer3" class="form-label">Phone Number</label>
+        <input [(ngModel)]="phoneNumber" type="text" id="validationServer3" name="phoneNumber"
+         required class="form-control"
+         [ngClass]='{
+            "is-valid":PhoneValidation,
+            "is-invalid":!PhoneValidation && PhoneTouched
+         }'
+         
+         >
+        <div class="valid-feedback">
+            Looks good!
+        </div>
+        <div class="invalid-feedback">Name Must Start with 010 /011 / 012/ 015  !</div>
+    </div>
+
+    <div class="col-md-4">
+        <label class="form-label">Address</label>
+        <select [(ngModel)]="selectedAddress" name="address" class="form-control">
+            <option value="">Choose The City</option>
+            <option *ngFor="let address of Address" [value]="address">{{address}}</option>
+
+        </select>
+    </div>
+    <div>
+        <button type="submit" class="btn btn-primary col-2">Submit</button>
+
+    </div>
+</form>
+
+
+<table id="example" class="table table-striped" style="width:100%">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Address</th>
+            <th>Phone</th>
+   
+        </tr>
+    </thead>
+    <tbody>
+       
+        <tr *ngFor="let student of AllStudentData">
+            <td>{{student.name}}</td>
+            <td>{{student.age}}</td>
+            <td>{{student.selectedAddress}}</td>
+            <td>{{student.phoneNumber}}</td>
+         
+        </tr>
