@@ -1,0 +1,123 @@
+You can add global styles to this file, and also import other style files
+
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'); */
+
+:root{
+    --color-primary: #6C9BCF;
+    --color-danger: #FF0060;
+    --color-success: #1B9C85;
+    --color-warning: #F7D060;
+    --color-white: #fff;
+    --color-info-dark: #7d8da1;
+    --color-dark: #363949;
+    --color-light: rgba(132, 139, 200, 0.18);
+    --color-dark-variant: #677483;
+    --color-background: #f6f6f9;
+    --color-background-light: #FFF;
+    --color-background-light2:#E4E9EE8F;
+    --color-background-badge: #E4E9EE8F;
+    --card-border-radius: 2rem;
+    --border-radius-1: 0.4rem;
+    --border-radius-2: 1.2rem;
+
+    --card-padding: 1.8rem;
+    --padding-1: 1.2rem;
+    --duration: 0.3s;
+    --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+.dark-mode-variables{
+    --color-background: #181a1e;
+    --color-white: #202528;
+    --color-dark: #edeffd;
+    --color-dark-variant: #a3bdcc;
+    --color-background-light: #4b4b4ba3;
+    --color-background-light2:#6969697d;
+    --color-background-badge: #43484d8f;
+    --color-light: rgba(0, 0, 0, 0.4);
+    --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    appearance: 0;
+    border: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Montserrat Alternates", sans-serif;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    color: var(--color-dark);
+    background-color: var(--color-background);
+}
+
+a {
+    text-decoration: none !important;
+    color: #FFF;
+    
+}
+
+p{
+    color: var(--color-dark-variant);
+}
+
+b{
+    color: var(--color-dark);
+}
+
+
+/* scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--color-light);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--color-primary);
+    border-radius: var(--border-radius-2);
+}
+/* end scrollbar */
+
+/*start dashboard*/
+.dashboard {
+    display: block;
+}
+
+.dashboard > .container-fluid {
+    display: flex;
+}
+
+@media (max-width: 767px) {
+
+    .dashboard > .container-fluid {
+        flex-direction: column;
+    }
+}
+
+/* start main */
+.dashboard main {
+    width: 100%;
+    flex: 1;
+    padding: 1.4rem 1rem 1rem ;
+}
+
+/* Large devices (desktops, 992px and down)*/
+@media (max-width: 1200px) {
+
+    .dashboard main {
+        overflow: auto;
+    }
+
+}
+
+/* end main */
+/*end dashboard*/
+

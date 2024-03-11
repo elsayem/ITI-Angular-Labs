@@ -1,0 +1,53 @@
+{
+  "employees": [
+    {
+      "id": "e851",
+      "username": "Maryem",
+      "email": "maryem@example.com",
+      "password": "emma123",
+      "age": "25",
+      "salary": "15000",
+      "address": "Cairo"
+    },
+    {
+      "id": "c71f",
+      "username": "abdu",
+      "email": "abdu@example.com",
+      "password": "abdulr123",
+      "age": 25,
+      "salary": 20000,
+      "address": "6th of october"
+    }
+  ],
+  "accounts": [
+    {
+      "id": "dda5",
+      "username": "SuperAdmin",
+      "email": "superadmin@example.com",
+      "password": "SuperAdmin123$",
+      "role": "ADMIN"
+    },
+    {
+      "id": "e084",
+      "username": "michael",
+      "email": "michael@example.com",
+      "password": "michael123",
+      "role": "ADMIN"
+    },
+    {
+      "id": "316a",
+      "username": "emma",
+      "email": "emma@example.com",
+      "password": "emma123",
+      "role": "USER"
+    },
+    {
+      "id": "0d73",
+      "username": "ahmed",
+      "email": "ahmed@example.com",
+      "password": "john123",
+      "role": "ADMIN"
+    }
+    
+  ]
+}

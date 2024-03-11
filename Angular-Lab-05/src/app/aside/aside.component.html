@@ -1,0 +1,41 @@
+<!-- start aside -->
+<aside [class.open]="isOpen == true">
+    <div class="toggle">
+        <div class="sidebar">
+            <button id="menu" (click)="changeStatusOfAside()">
+                <span class="material-icons-sharp">
+                    menu
+                </span>
+            </button>
+            <a routerLink="/home" [class.active]="activeLink == 'main-dashboard'" (click)="activeLinkChange('main-dashboard')"  id="asideMain">
+                <span class="material-icons-sharp">
+                    dashboard
+                </span>
+                <h5 data-i18n="dashboard">Dashboard</h5>
+                <span class="centerDash"></span>
+            </a>
+            <a routerLink="/employees" [class.active]="activeLink == 'employees'" (click)="activeLinkChange('employees')" id="asideEmps" *ngIf="authenticationLogin.role == 'ADMIN'">
+                <span class="material-icons-sharp">
+                    group
+                    </span>
+                <h5 data-i18n="employees">Employee</h5>
+                <span class="centerDash"></span>
+            </a>
+            <a routerLink="/accounts" [class.active]="activeLink == 'accounts'" (click)="activeLinkChange('accounts')" id="asideAccounts" *ngIf="authenticationLogin.role == 'ADMIN'">
+                <span class="material-icons-sharp">
+                    manage_accounts
+                </span>
+                <h5 data-i18n="accounts">Accounts</h5>
+                <span class="centerDash"></span>
+            </a>
+            <a [routerLink]="['/employeedetails' , authenticationLogin?.id]" [class.active]="activeLink == 'employeedetails'" (click)="activeLinkChange('employeedetails')" id="asideDetails" *ngIf="authenticationLogin.role == 'USER'">
+                <span class="material-icons-sharp">
+                    person
+                    </span>
+                <h5 data-i18n="employees">Details</h5>
+                <span class="centerDash"></span>
+            </a>
+        </div>
+    </div>
+</aside>
+<!-- end aside -->

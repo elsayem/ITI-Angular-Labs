@@ -1,0 +1,16 @@
+<app-navbar *ngIf="authenticationLogin != null"></app-navbar>
+<!-- start section dashboard -->
+<section id="dashboard" class="dashboard">
+  <div class="container-fluid">
+      <!-- start aside -->
+      <app-aside *ngIf="authenticationLogin != null"></app-aside>
+      <!-- end aside -->
+      <!-- start main -->
+      <main>
+        <router-outlet></router-outlet>
+      </main>
+      <!-- end main -->
+  </div>
+</section>
+<!-- end section dashboard -->
+

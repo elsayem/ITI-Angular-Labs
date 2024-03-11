@@ -1,0 +1,152 @@
+
+/* start aside */
+
+aside {
+    padding: 1rem;
+    width: 100px;
+    transition: all var(--duration) linear;
+    flex-shrink: 0;
+}
+
+aside.open {
+    width: 190px;
+}
+
+aside .toggle .sidebar {
+    background-color: var(--color-white);
+    border-radius: var(--border-radius-2);
+    height: calc(100vh - 130px);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    box-shadow: var(--box-shadow);
+    transition: all var(--duration) ease;
+    overflow: hidden;
+}
+
+
+aside .toggle .sidebar:hover {
+    box-shadow: none;
+}
+
+aside .toggle .sidebar button {
+    background-color: var(--color-white);
+    color: var(--color-dark-variant);
+    padding: 10px 0px;
+}
+
+aside .toggle .sidebar a {
+    color: var(--color-dark-variant);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 1rem 0px;
+    transition: all 0.4s;
+    position: relative;
+}
+
+aside .toggle .sidebar a:hover {
+    background-color: var(--color-light);
+}
+
+aside .toggle .sidebar a span.badge {
+    display: none;
+}
+
+aside.open .toggle .sidebar a span.badge {
+    display: block;
+}
+
+aside .toggle .sidebar a h5 {
+    color: var(--color-info-dark);
+    opacity: 0;
+    pointer-events: none;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: all var(--duration) ease;
+    font-weight: bold;
+    font-size: 12px;
+    margin-bottom: 0px;
+}
+
+/* Large devices (desktops, 767px and down)*/
+@media (max-width: 767px) {
+
+aside .toggle .sidebar {
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        box-shadow: var(--box-shadow);
+        overflow: hidden;
+    }
+
+aside {
+        padding: 1rem;
+        width: 100%;
+        flex-shrink: 0;
+    }
+
+aside.open {
+        width: 100%;
+    }
+
+aside .toggle .sidebar a {
+        flex-grow: 1;
+    }
+
+aside .toggle .sidebar button {
+        display: none;
+    }
+
+}
+
+aside.open .toggle .sidebar a h5 {
+    color: var(--color-info-dark);
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* Small devices (landscape phones, 576px and down)*/
+@media (max-width: 450px) { 
+    
+aside .toggle .sidebar a h5 {
+        display: none;
+    }
+
+aside.open .toggle .sidebar a h5 {
+        display: none;
+    }
+
+}
+
+aside .toggle .sidebar a span:first-of-type {
+    margin-left: 1.5rem;
+    font-size: 1.3rem;
+    transition: all var(--duration) ease;
+}
+
+aside .toggle .sidebar a:hover span:first-of-type {
+    margin-left: 1.8rem;
+}
+
+aside .toggle .sidebar a.active {
+    background-color: var(--color-light);
+    color: var(--color-primary);
+    position: relative;
+}
+
+aside .toggle .sidebar a.active .centerDash {
+    background-color: var(--color-primary);
+    position: absolute;
+    display: inline-block;
+    width: 0.5rem;
+    height: 1.4rem;
+    top: 50%;
+    left: 0%;
+    transform: translateY(-50%);
+
+}
+
+/* end aside */

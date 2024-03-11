@@ -1,0 +1,95 @@
+<div class="card p-2">
+
+    <div class="conta">
+        <form method="post" #myForm="ngForm" [formGroup]="employeesForm" (ngSubmit)="onSubmit(employeesForm);">
+            <div class="alert alert-danger" *ngIf="dublicatedEmail != ''">{{dublicatedEmail}}</div>
+            <div class="form-floating mt-3">
+                <input type="hidden" id="empId" formControlName="id">
+            </div>
+            <div class="form-floating mt-3">
+                <input type="text" formControlName="username" class="form-control" id="username" placeholder="username">
+                <label for="username">Username</label>
+            </div>
+            <div *ngIf="employeesForm.get('username')?.errors != null && employeesForm.get('username')?.touched">
+                <small class="text-danger px-1" *ngIf="employeesForm.get('username')?.errors?.['required']">username must be required..!</small>
+                <small class="text-danger px-1" *ngIf="employeesForm.get('username')?.errors?.['minlength']">username length must be more than 4 ..!!</small>
+            </div>
+            <div class="form-floating mt-3">
+                <input type="email" formControlName="email" class="form-control" id="email" placeholder="name@example.com">
+                <label for="email">Email address</label>
+            </div>
+            <div *ngIf="employeesForm.get('email')?.errors != null && employeesForm.get('email')?.touched">
+                <small class="text-danger px-1" *ngIf="employeesForm.get('email')?.errors?.['required']">email must be required..!</small>
+                <small class="text-danger px-1" *ngIf="employeesForm.get('email')?.errors?.['email']">email invalid ..!!</small>
+            </div>
+            <div class="form-floating mt-3">
+                <input type="password" formControlName="password" class="form-control" id="password" placeholder="Password">
+                <label for="password">Password</label>
+            </div>
+            <div *ngIf="employeesForm.get('password')?.errors != null && employeesForm.get('password')?.touched">
+                <small class="text-danger px-1" *ngIf="employeesForm.get('password')?.errors?.['required']">password must be required..!</small>
+                <small class="text-danger px-1" *ngIf="employeesForm.get('password')?.errors?.['minLength']">password length must be more than 4 ..!!</small>
+            </div>
+            <div class="form-floating mt-3">
+                <input type="number" formControlName="age" class="form-control" id="age" placeholder="age">
+                <label for="age">Age</label>
+            </div>
+            <div *ngIf="employeesForm.get('age')?.errors != null && employeesForm.get('age')?.touched">
+                <small class="text-danger px-1" *ngIf="employeesForm.get('age')?.errors?.['required']">age must be required..!</small>
+                <small class="text-danger px-1" *ngIf="employeesForm.get('age')?.errors?.['min'] || employeesForm.get('age')?.errors?.['max'] ">age length must be between 25 and 60 ..!!</small>
+            </div>
+            <div class="form-floating mt-3">
+                <input type="number" formControlName="salary" class="form-control" id="salary" placeholder="salary">
+                <label for="salary">Salary</label>
+            </div>
+            <div *ngIf="employeesForm.get('salary')?.errors != null && employeesForm.get('salary')?.touched">
+                <small class="text-danger px-1" *ngIf="employeesForm.get('salary')?.errors?.['required']">salary must be required..!</small>
+                <small class="text-danger px-1" *ngIf="employeesForm.get('salary')?.errors?.['min'] || employeesForm.get('salary')?.errors?.['max'] ">salary length must be between 6000 and 100000 ..!!</small>
+            </div>
+            <div class="form-floating mt-3">
+                <input type="text" formControlName="address" class="form-control" id="address" placeholder="address">
+                <label for="address">Address</label>
+            </div>
+            <div *ngIf="employeesForm.get('address')?.errors != null && employeesForm.get('address')?.touched">
+                <small class="text-danger px-1" *ngIf="employeesForm.get('address')?.errors?.['required']">address must be required..!</small>
+            </div>
+            <div class="actions">
+                <button class="btn btn-primary w-100 my-2" [disabled]="employeesForm.invalid" type="submit">Save</button>
+            </div>
+        </form>
+
+        <table class="table table-borderd table-hover">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Age</th>
+                    <th>Salary</th>
+                    <th class="text-center">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let employee of employeesList; index as i">
+                    <td>{{i + 1}}</td>
+                    <td>{{employee.username}}</td>
+                    <td>{{employee.email}}</td>
+                    <td>{{employee.age}}</td>
+                    <td>{{employee.salary}}</td>
+                    <td class="text-center">
+                        <div class="dropdown">
+                            <button class="btn btn-light dropdown-toggle btn-sm" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Actions
+                            </button>
+                            <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" [routerLink]="['/employeedetails' , employee.id]">Details</a></li>
+                            <li><a class="dropdown-item" (click)="UpdateEmployee(employee.id)">Edit</a></li>
+                            <li><a class="dropdown-item" (click)="DeleteEmployee(employee.id)">Delete</a></li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

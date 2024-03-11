@@ -1,0 +1,24 @@
+
+    <section id="header" class="header"> 
+        <nav class="navbar">
+            <div class="container-fluid">
+                
+                <div class="profile">
+                    <div class="dropdown">
+                        <div class="profile-info" data-bs-toggle="dropdown" aria-expanded="false">
+                            <div class="info">
+                                <p><small data-i18n="hey">HI</small>, <b>{{authenticationLogin.username}}</b></p>
+                                <small>{{authenticationLogin.role}}</small>
+                            </div>
+                           
+                        </div>
+                        <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="" data-i18n="cnprofile">Profile</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item js-logout-btn" href="javascript:;" (click)="logout()">logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </section>

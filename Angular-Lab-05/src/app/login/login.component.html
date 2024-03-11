@@ -1,0 +1,29 @@
+<div class="container col-xl-10 col-xxl-8 px-4 py-5">
+    <div class="row align-items-center g-lg-5 py-5">
+        <h2>Let's get started</h2>
+        <div class="col-md-10 mx-auto col-lg-5">
+            <div class="container-login-box">
+                <div class="login-form-info text-center my-5">
+                    <h2 class="h3 text-muted">Login</h2>
+                </div>
+
+                <form class="login-form w-75 mx-auto" method="post"[formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm)">
+                    <div class="alert alert-danger" *ngIf="messageError != ''">{{messageError}}</div>
+                    <div class="form-floating mt-3">
+                        <input type="email" class="form-control" formControlName="email" id="email" placeholder="name@example.com">
+                        <label for="email">Email address</label>
+                    </div>
+                    <small class="text-danger px-1" *ngIf="loginForm.get('email')?.errors?.['required'] && loginForm.get('email')?.touched">email field must be required..!!</small>
+                    <div class="form-floating mt-3">
+                        <input type="password" class="form-control" formControlName="password" id="password" placeholder="Password">
+                        <label for="password">Password</label>
+                    </div>
+                    <small class="text-danger px-1" *ngIf="loginForm.get('password')?.errors?.['required'] && loginForm.get('password')?.touched">password field must be required..!!</small>
+                    <div class="login-form-action my-2">
+                        <button type="submit" [disabled]="loginForm.invalid" class="btn btn-primary">Login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
