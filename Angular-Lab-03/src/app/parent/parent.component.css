@@ -1,0 +1,116 @@
+.table-container {
+    margin: 20px;
+    overflow-x: auto; /* Enable horizontal scrolling if needed */
+  }
+  
+  .product-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    background: linear-gradient(to bottom, #fff, #f9f9f9);
+    animation: fadeIn 0.5s ease-in-out;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .product-table th,
+  .product-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .product-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  
+  .product-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .product-table tbody tr:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.02);
+  }
+  
+  .row-animation {
+    animation: rowFadeIn 0.5s ease-in-out forwards;
+    opacity: 0;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes rowFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  /* Existing styles */
+.table-container {
+    margin: 20px;
+    overflow-x: auto;
+  }
+  
+  .product-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    background: linear-gradient(to bottom, #fff, #f9f9f9);
+    animation: fadeIn 0.5s ease-in-out;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .product-table th,
+  .product-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .product-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  
+  .product-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .product-table tbody tr:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.02);
+  }
+  
+  .row-animation {
+    animation: rowFadeIn 0.5s ease-in-out forwards;
+    opacity: 0;
+  }
+  .delete-button {
+    background-color: #ff6347;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .delete-button:hover {
+    background-color: #cc4c3e;
+  }
