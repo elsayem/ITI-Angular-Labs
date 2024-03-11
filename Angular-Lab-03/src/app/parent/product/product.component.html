@@ -1,67 +1,66 @@
 <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-md-6">
-        <form class="product-form" [formGroup]="proRegForm">
-          <div class="form-group">
-            <label for="name">Name:</label>
-            <input type="text" id="name" formControlName="name" class="form-control" />
-            <div *ngIf="proRegForm.get('name')?.invalid && (proRegForm.get('name')?.dirty || proRegForm.get('name')?.touched)" class="error-message">
-              <div *ngIf="proRegForm.get('name')?.errors?.['required']" class="text-danger">Name is required.</div>
-              <div *ngIf="proRegForm.get('name')?.errors?.['minlength']" class="text-danger">Name must be at least 5 characters.</div>
-            </div>
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <form class="product-form custom-form" [formGroup]="proRegForm">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" formControlName="name" class="form-control" />
+          <div *ngIf="proRegForm.get('name')?.invalid && (proRegForm.get('name')?.dirty || proRegForm.get('name')?.touched)" class="error-message">
+            <div *ngIf="proRegForm.get('name')?.errors?.['required']" class="text-danger">Name is required.</div>
+            <div *ngIf="proRegForm.get('name')?.errors?.['minlength']" class="text-danger">Name must be at least 5 characters.</div>
           </div>
-  
-          <div class="form-group">
-            <label for="category">Category:</label>
-            <input type="text" id="category" formControlName="category" class="form-control" />
-            <div *ngIf="proRegForm.get('category')?.invalid && (proRegForm.get('category')?.dirty || proRegForm.get('category')?.touched)" class="error-message">
-              <div *ngIf="proRegForm.get('category')?.errors?.['required']" class="text-danger">Category is required.</div>
-              <div *ngIf="proRegForm.get('category')?.errors?.['minlength']" class="text-danger">Category must be at least 4 characters.</div>
-            </div>
+        </div>
+
+        <div class="form-group">
+          <label for="category">Category:</label>
+          <input type="text" id="category" formControlName="category" class="form-control" />
+          <div *ngIf="proRegForm.get('category')?.invalid && (proRegForm.get('category')?.dirty || proRegForm.get('category')?.touched)" class="error-message">
+            <div *ngIf="proRegForm.get('category')?.errors?.['required']" class="text-danger">Category is required.</div>
+            <div *ngIf="proRegForm.get('category')?.errors?.['minlength']" class="text-danger">Category must be at least 4 characters.</div>
           </div>
-  
-          <div class="form-group">
-            <label for="price">Price:</label>
-            <input type="number" id="price" formControlName="price" class="form-control" />
-            <div *ngIf="proRegForm.get('price')?.invalid && (proRegForm.get('price')?.dirty || proRegForm.get('price')?.touched)" class="error-message">
-              <div *ngIf="proRegForm.get('price')?.errors?.['required']" class="text-danger">Price is required.</div>
-              <div *ngIf="proRegForm.get('price')?.errors?.['min']" class="text-danger">Price must be at least 100.</div>
-            </div>
+        </div>
+
+        <div class="form-group">
+          <label for="price">Price:</label>
+          <input type="number" id="price" formControlName="price" class="form-control" />
+          <div *ngIf="proRegForm.get('price')?.invalid && (proRegForm.get('price')?.dirty || proRegForm.get('price')?.touched)" class="error-message">
+            <div *ngIf="proRegForm.get('price')?.errors?.['required']" class="text-danger">Price is required.</div>
+            <div *ngIf="proRegForm.get('price')?.errors?.['min']" class="text-danger">Price must be at least 100.</div>
           </div>
-  
-          <div class="form-group">
-            <label for="quantity">Quantity:</label>
-            <input type="number" id="quantity" formControlName="quantity" class="form-control" />
-            <div *ngIf="proRegForm.get('quantity')?.invalid && (proRegForm.get('quantity')?.dirty || proRegForm.get('quantity')?.touched)" class="error-message">
-              <div *ngIf="proRegForm.get('quantity')?.errors?.['required']" class="text-danger">Quantity is required.</div>
-              <div *ngIf="proRegForm.get('quantity')?.errors?.['min']" class="text-danger">Quantity must be at least 5.</div>
-            </div>
+        </div>
+
+        <div class="form-group">
+          <label for="quantity">Quantity:</label>
+          <input type="number" id="quantity" formControlName="quantity" class="form-control" />
+          <div *ngIf="proRegForm.get('quantity')?.invalid && (proRegForm.get('quantity')?.dirty || proRegForm.get('quantity')?.touched)" class="error-message">
+            <div *ngIf="proRegForm.get('quantity')?.errors?.['required']" class="text-danger">Quantity is required.</div>
+            <div *ngIf="proRegForm.get('quantity')?.errors?.['min']" class="text-danger">Quantity must be at least 5.</div>
           </div>
-  
-          <div class="form-group">
-            <label for="discount">Discount:</label>
-            <input type="number" id="discount" formControlName="discount" class="form-control" />
-            <div *ngIf="proRegForm.get('discount')?.invalid && (proRegForm.get('discount')?.dirty || proRegForm.get('discount')?.touched)" class="error-message">
-              <div *ngIf="proRegForm.get('discount')?.errors?.['required']" class="text-danger">Discount is required.</div>
-              <div *ngIf="proRegForm.get('discount')?.errors?.['min']" class="text-danger">Discount must be at least 5.</div>
-              <div *ngIf="proRegForm.get('discount')?.errors?.['max']" class="text-danger">Discount cannot exceed 25.</div>
-            </div>
+        </div>
+
+        <div class="form-group">
+          <label for="discount">Discount:</label>
+          <input type="number" id="discount" formControlName="discount" class="form-control" />
+          <div *ngIf="proRegForm.get('discount')?.invalid && (proRegForm.get('discount')?.dirty || proRegForm.get('discount')?.touched)" class="error-message">
+            <div *ngIf="proRegForm.get('discount')?.errors?.['required']" class="text-danger">Discount is required.</div>
+            <div *ngIf="proRegForm.get('discount')?.errors?.['min']" class="text-danger">Discount must be at least 5.</div>
+            <div *ngIf="proRegForm.get('discount')?.errors?.['max']" class="text-danger">Discount cannot exceed 25.</div>
           </div>
-  
-          <div class="form-group">
-            <div class="form-check" id="boolenVlue">
-              <input type="checkbox"  id="isInSale" formControlName="isInSale" class="form-check-input" />
-              <label for="isInSale" class="form-check-label">Is in Sale:</label>
-            </div>
+        </div>
+
+        <div class="form-group">
+          <div class="form-check" id="boolenVlue">
+            <input type="checkbox"  id="isInSale" formControlName="isInSale" class="form-check-input" />
+            <label for="isInSale" class="form-check-label">Is in Sale:</label>
           </div>
-  
-          <button type="submit" (click)="onSubmit()" [disabled]="proRegForm.invalid" class="btn btn-primary submit-button">
-            Submit
-          </button>
-          <button type="button" (click)="resetForm()" class="btn btn-secondary reset-button">
-            Reset
-          </button>
-        </form>
-      </div>
+        </div>
+
+        <button type="submit" (click)="onSubmit()" [disabled]="proRegForm.invalid" class="btn btn-primary submit-button">
+          Submit
+        </button>
+        <button type="button" (click)="resetForm()" class="btn btn-secondary reset-button">
+          Reset
+        </button>
+      </form>
     </div>
   </div>
