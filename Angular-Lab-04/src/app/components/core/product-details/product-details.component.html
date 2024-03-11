@@ -1,0 +1,40 @@
+<div class="card mb-4 mt-5 w-75 ms-auto text-center me-auto rounded-3 shadow-sm" *ngIf="product; else notFound">
+  <img
+    [src]="product?.img"
+    class="card-img-top"
+    width="500"
+    height="300"
+    style="object-fit: cover"
+  />
+  <div class="card-header py-3">
+    <h1  class="card-title pricing-card-title">{{ product?.name | uppercase }}</h1>
+  </div>
+  <div class="card-body fs-4 fw-bold">
+    
+    <ul class="list-unstyled mt-3 mb-4">
+      <li><p>Description: {{ product?.description }}</p></li>
+      <li *ngIf="!product?.onSale"><p>Price: {{ product?.price | currency }}</p></li>
+      <li *ngIf="product?.onSale">
+        <p class="text-decoration-line-through text-danger">Price: {{ product?.price | currency }}</p>
+        <p> Discount: {{ product?.discount | percent }}</p>
+        <p>new Price:{{ newPrice | currency}}</p>
+        
+      </li>
+
+      <li *ngIf="product?.quantity == 0" ><p class="text-danger">Sold Out</p></li>
+    </ul>
+    <button
+      type="button"
+      class="w-25 btn btn-lg btn-outline-primary m-auto"
+      [disabled]="product?.quantity == 0"
+    >
+      Add To Cart
+    </button>
+  </div>
+</div>
+
+<ng-template #notFound>
+  <div class="bg-dark text-light text-center p-5 rounded">
+    <h1>this id is not valid</h1>
+  </div>
+</ng-template>

@@ -1,0 +1,47 @@
+<div class="container mt-4">
+  <h1 class="text-center h1 fs-1">Products List</h1>
+  <table class="table table-striped table-hover text-center">
+    <thead class="fs-4">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Descrption</th>
+        <th scope="col">Price</th>
+        <th scope="col">Discount</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Onsale</th>
+        <th scope="col">Image</th>
+        <th scope="col">Controls</th>
+      </tr>
+    </thead>
+    <tbody  class="table-group-divider align-middle">
+      <tr *ngFor="let product of ProductList">
+        <th scope="row">{{ product.id }}</th>
+        <td>{{ product.name | uppercase}}</td>
+        <td>{{ product.description }}</td>
+        <td>{{ product.price | currency}}</td>
+        <td>{{ product.discount | percent }}</td>
+        <td>{{ product.quantity }}</td>
+        <td><input type="checkbox" class="form-check-input bg-success fs-4"  disabled [checked]="product.onSale"></td>
+        <td>
+          <img
+            [src]="product.img"
+            width="100"
+            height="100"
+            style="object-fit: cover"
+          />
+        </td>
+        <td class="fs-3">
+          <a [routerLink]="['/products/details', product.id]"
+            ><i class="bi bi-info-circle text-warning"></i
+          ></a>
+          |
+          <a [routerLink]="['/products/edit', product.id]"
+            ><i class="bi bi-pencil-square text-primary"></i
+          ></a>
+          | <a (click)="delete(product.id)"><i class="bi bi-archive text-danger"></i></a> |
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
